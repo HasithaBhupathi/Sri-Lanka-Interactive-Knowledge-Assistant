@@ -17,8 +17,7 @@ technology can be used to create dynamic and interactive learning experiences.
 ###################################### User Manual ##################################################
 
 Step 1. Make a new folder (eg, Sri Lanka Interactive Knowledge Assistant)  for our application.
-Step 2. Copy our application files (App.py, main.py, .env, requirements.txt, Readme.txt, 
-        flan-t5-base-local, and local_embedding_model ) into that folder.
+Step 2. Copy our application files (App.py, main.py, requirements.txt, and Readme.txt ) into that folder.
 Step 3. In that folder, create a virtual environment using the command "python3.10.0 -m venv venv_" on the
         Command prompt. This creates a folder named venv_ containing the isolated Python environment.
 
@@ -27,9 +26,6 @@ Step 3. In that folder, create a virtual environment using the command "python3.
          │   └── ...                # Python interpreter and libraries installed here
          ├── App.py                 # ✅ Streamlit application file
          ├── main.py,               # ✅ Main Python files
-         ├── .env                   # ✅ Environment variables
-         ├── flan-t5-base-local     # ✅ LLM file
-         ├── local_embedding_model  # ✅ Embedding model file
          ├── requirements.txt       # ✅ List of required libraries with versions
          └── Readme.txt             # ℹ️ Project description and usage instructions            
 
