@@ -1,7 +1,6 @@
 python-dotenv==1.1.1    
 langchain==0.3.27        
 transformers==4.55.0     
-pinecone-client==6.0.0  
 langchain-huggingface==0.3.1 
 langchain-pinecone==0.2.11    
 sentence-transformers==5.1.0  
@@ -12,4 +11,5 @@ ipywidgets==8.1.7
 langchain-community==0.3.27
 pypdf==5.9.0
 pinecone
+
 
