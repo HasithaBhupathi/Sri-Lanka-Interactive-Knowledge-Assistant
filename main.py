@@ -31,26 +31,32 @@ class brother:
         ### Embedding model download
         #from langchain_community.embeddings import SentenceTransformerEmbeddings
         
-        embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+        embedding_model = SentenceTransformerEmbeddings(model_name="sentence-transformers/multi-qa-mpnet-base-dot-v1")
 
 
         ### Importing the pinecone vector DB and definning the rerriever
         #from langchain_pinecone import PineconeVectorStore
         
         import_index = PineconeVectorStore.from_existing_index(
-        index_name= "sri-lanka-informations",
+        index_name= "sri-lanka-information",
         embedding= embedding_model
         )
 
-        retriever = import_index.as_retriever(search_type = "similarity", search_kwargs = {"k":2})
+        retriever = import_index.as_retriever(search_type = "similarity", search_kwargs = {"k":4})
 
 
 
         ### Download the LLM from huggingface
         #from transformers import pipeline
         
-        LLM_name = "google/flan-t5-base"
-        chat_model = pipeline(task = "text2text-generation", model = LLM_name, max_new_tokens = 100)
+        LLM_name = "meta-llama/Meta-Llama-3-8B-Instruct"
+        chat_model = pipeline(task = "text-generation",
+                              model = LLM_name,
+                              max_new_tokens = 250,    # control answer length
+                              temperature = 0.2,       # Lower = more factual answers
+                              device_map = "auto",     # automaticaly select GPU if available
+                              torch_type = "auto"      # Uses correct precision for your hardware
+                              )
 
 
         
@@ -68,10 +74,10 @@ class brother:
         You are an assistant that answers questions about Sri Lanka.
 
         Instructions:
-        1. Use both the information from the document 'Introduction to Sri Lanka' and internet.
+        1. Use ONLY the information from the document 'Introduction to Sri Lanka.
         2. The document covers: geography, history, culture, economy, religion, transportation, health care, education, and society.
-        3. You can use outside knowledge or make up information if you want.
-        4. Your answer must be give from complete and clear three sentences.
+        3. Do NOT use outside knowledge or make up information.
+        4. Your answer must be give from complete and clear sentences.
         5. If the answer is not found, reply "The document does not provide this information.".
 
         Context:
@@ -127,6 +133,7 @@ class brother:
 
 
     
+
 
 
 
