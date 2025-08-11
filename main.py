@@ -42,7 +42,7 @@ class brother:
         embedding= embedding_model
         )
 
-        retriever = import_index.as_retriever(search_type = "similarity", search_kwargs = {"k":4})
+        retriever = import_index.as_retriever(search_type = "similarity", search_kwargs = {"k":3})
 
 
 
@@ -133,6 +133,7 @@ class brother:
 
 
     
+
 
 
 
