@@ -31,14 +31,14 @@ class brother:
         ### Embedding model download
         #from langchain_community.embeddings import SentenceTransformerEmbeddings
         
-        embedding_model = SentenceTransformerEmbeddings(model_name="sentence-transformers/multi-qa-mpnet-base-dot-v1")
+        embedding_model = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 
 
         ### Importing the pinecone vector DB and definning the rerriever
         #from langchain_pinecone import PineconeVectorStore
         
         import_index = PineconeVectorStore.from_existing_index(
-        index_name= "sri-lanka-information",
+        index_name= "sri-lanka-informations",
         embedding= embedding_model
         )
 
@@ -133,6 +133,7 @@ class brother:
 
 
     
+
 
 
 
