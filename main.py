@@ -50,13 +50,7 @@ class brother:
         #from transformers import pipeline
         
         LLM_name = "google/flan-t5-base"
-        chat_model = pipeline(task = "text2text-generation",
-                              model = LLM_name,
-                              max_new_tokens = 250,    # control answer length
-                              temperature = 0.2,       # Lower = more factual answers
-                              device_map = "auto",     # automaticaly select GPU if available
-                              torch_type = "auto"      # Uses correct precision for your hardware
-                              )
+        chat_model = pipeline(task = "text2text-generation", model = LLM_name, max_new_tokens = 100)
 
 
         
@@ -133,6 +127,7 @@ class brother:
 
 
     
+
 
 
 
