@@ -49,8 +49,8 @@ class brother:
         ### Download the LLM from huggingface
         #from transformers import pipeline
         
-        LLM_name = "meta-llama/Meta-Llama-3-8B-Instruct"
-        chat_model = pipeline(task = "text-generation",
+        LLM_name = "google/flan-t5-base"
+        chat_model = pipeline(task = "text2text-generation",
                               model = LLM_name,
                               max_new_tokens = 250,    # control answer length
                               temperature = 0.2,       # Lower = more factual answers
@@ -133,6 +133,7 @@ class brother:
 
 
     
+
 
 
 
